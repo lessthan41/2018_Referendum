@@ -82,32 +82,15 @@ function func(location) {
   setTimeout(function(){doZoom(location);}, 1500);
 }
 
-
-// map.beforeRender(pan);
-
-// when we set the new location, the map will pan smoothly to it
-// view.setCenter(location);
-// }
-
-// function move(site) {
-//   map.setView(new ol.View({
-//     center: site,
-//     zoom: 11
-//   }));
-// }
-//
-// function move_larger(site) {
-//   map.setView(new ol.View({
-//     center: site,
-//     zoom: 10.2
-//   }));
-// }
-
 //Choose City change District
 function changeCity() {
+
   //下拉選單長度 = 0
   $("#district option").remove();
   $("#district").append($("<option></option>").attr("value", "none").text("-"));
+  $("#village option").remove();
+  $("#village").append($("<option></option>").attr("value", "none").text("-"));
+
 
   var City = $('#city').val();
   //console.log(City);
