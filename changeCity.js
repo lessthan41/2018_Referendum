@@ -22,12 +22,6 @@ var Taidong = ol.proj.fromLonLat([121.052658, 22.845853])
 var Hualian = ol.proj.fromLonLat([121.411609, 23.815980])
 var LianJian = ol.proj.fromLonLat([119.953364, 26.180745])
 
-// var view = new ol.View({
-//   center: taipei,
-//   zoom: 7.5
-// })
-// var view = map.getView();
-
 function doPan(location) {
 
   view.animate({
@@ -118,4 +112,25 @@ function changeCity() {
       func(put[i]);
     }
   }
+}
+
+//-----------------------------------------------
+//"pointermove geojson"
+
+var select = new ol.interaction.Select({
+  condition: ol.events.condition.pointerMove
+});
+
+if (select !== null) {
+  map.addInteraction(select);
+}
+
+function add_interaction() {
+  //console.log(123);
+  map.addInteraction(select);
+}
+
+//del_interaction
+function del_interaction() {
+  map.removeInteraction(select);
 }

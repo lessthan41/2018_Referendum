@@ -35,26 +35,6 @@ var map = new ol.Map({
   view: view
 });
 
-//-----------------------------------------------
-//"pointermove geojson"
-var select = new ol.interaction.Select({
-  condition: ol.events.condition.pointerMove
-});
-
-if (select !== null) {
-  map.addInteraction(select);
-}
-
-function add_interaction() {
-  //console.log(123);
-  map.addInteraction(select);
-}
-
-//del_interaction
-function del_interaction() {
-  map.removeInteraction(select);
-}
-
 //---------------------------------------------
 $(function() {
 
