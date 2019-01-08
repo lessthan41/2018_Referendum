@@ -1,6 +1,5 @@
-proj4.defs("EPSG:3824","+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs");
-proj4.defs('urn:ogc:def:crs:EPSG::3824',      proj4.defs('EPSG:3824'));
-ol.proj.proj4.register(proj4);
+/*proj4.defs("EPSG:3824","+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs");
+proj4.defs('urn:ogc:def:crs:EPSG::3824',      proj4.defs('EPSG:3824'));*/
 
 var view = new ol.View({
   center: ol.proj.fromLonLat([121, 23.5]),
