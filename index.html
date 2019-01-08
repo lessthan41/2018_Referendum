@@ -12,6 +12,13 @@
   <!-- jq -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+  <!-- import proj4 -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.4.4/proj4.js'></script>
+
+  <!-- leaflet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css" type="text/css" crossorigin="">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js" crossorigin=""></script>
+
   <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous'>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49' crossorigin='anonymous'></script>
   <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy' crossorigin='anonymous'></script>
@@ -27,10 +34,7 @@
 
   <!-- semantic -->
   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-  <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="semantic/dist/semantic.min.js"></script>
 
 
@@ -57,17 +61,15 @@
       <div class="page-content">
         <!-- Your content goes here -->
 
-        <div w3-include-html="data.html"></div>
-        <!------------------------------------------------------>
-        <div class="container-fluid">
-
-          <div>
-            <div class='col-12'>
-              <div id="map" onmouseleave="del_interaction()" onmouseover="add_interaction()"></div>
+        <div class="ui grid">
+          <div class="one wide column"></div>
+          <!--------------------------------------------------->
+          <div class="five wide column" id='section1-1'>
+            <div>
               <!------------------------------------------------------>
               <br><span class='text'>1. 選擇您想查看的公投案</span>
               <form class='form' id='ref'>
-                <select name='ref' style="width:300px">
+                <select name='ref' style="width:300px;" onchange="draw()">
                   <option value="none">-</option>
                   　<option value="7">第七案： 反空汙公投</option>
                   　<option value="8">第八案： 反深澳電廠</option>
@@ -81,25 +83,30 @@
                 </select>
               </form>
               <!------------------------------------------------------>
-              <br><span class='text'>2. 選擇您想進行疊圖的公投案或村里特徵</span>
+              <br><span class='text'>2. 選擇您想進行疊圖的公投案</span>
               <form class='form' id='overlay'>
-                <select id='overlay' style="width:300px">
+                <select id='overlay' style="width:300px;">
                   <option value="none">-</option>
-                  　<option value="age">各里平均年齡</option>
-                  　<option value="">各里123</option>
-                  　<option value="">各里HIHI</option>
-                  　<option value="">你好</option>
+                  <option value="7">第七案： 反空汙公投</option>
+                  　<option value="8">第八案： 反深澳電廠</option>
+                  　<option value="9">第九案： 反核食</option>
+                  <option value="10">第十案： 婚姻定義</option>
+                  <option value="11">第十一案： 適齡性平教育</option>
+                  <option value="12">第十二案： 同性伴侶專法</option>
+                  <option value="13">第十三案： 東京奧運正名</option>
+                  　<option value="14">第十四案： 婚姻平權</option>
+                  <option value="14">第十五案： 性平教育</option>
                 </select>
               </form><br>
               <!------------------------------------------------------>
               <div style='padding-left: 18px; color: yellow'>
-                Welch Two Sample t-test</div>
+              </div>
               <div style='padding-left: 18px; color: yellow'>
-                這裡拿來裝算出來的t.value等等</div>
+              </div>
               <!------------------------------------------------------>
               <br><span class='text'>3. 選擇您想查看的村里及公投案，查看該里詳細投票資訊</span>
-              <form class='form' id='show_table'>
 
+              <form class='form' id='show_table'><br>
                 <div>
                   <select id='city' style="width:80px" onchange="changeCity(); condition()">
                     <option value="none" selected>-</option>
@@ -154,10 +161,13 @@
               <div id="includedContent">
                 <table class="ui red table" id="table1">
                   <thead>
-                    <tr><th></th>
-                    <th></th>
-                    <th></th>
-                  </tr></thead><tbody>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
                     <tr>
                       <td></td>
                       <td></td>
@@ -175,20 +185,26 @@
                     </tr>
                   </tbody>
                 </table>
-
               </div>
             </div>
           </div>
+          <!--------------------------------------------------->
+          <div class="ten wide column" id='section1-2'>
+            <div id="map" onmouseleave="del_interaction()" onmouseover="add_interaction()"></div>
+          </div>
         </div>
+      </div>
     </main>
     <!------------------------------------------------------>
     <script src="index.js"></script>
     <script type="text/javascript" src="district_data.js"></script>
-    <script type="text/javascript" src="changeCity.js"></script>
+    <script src="changeCity.js"></script>
     <script src="vill.js"></script>
     <script src="table.js"></script>
     <script src="condition.js"></script>
     <script src="request.js"></script>
+    <script src="draw.js"></script>
+
 
 
   </div>

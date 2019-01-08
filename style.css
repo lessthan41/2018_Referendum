@@ -3,10 +3,20 @@ body {
 }
 
 #map {
-  padding-top: 15px;
-  height: 650px;
-  width: 70%;
-  float: right;
+  margin-top: 1vh;
+  margin-right: 0.45vw;
+  height: 105% ;
+}
+
+#section1-1{
+  height: 89vh;
+
+  position:relative;
+}
+
+#section1-2{
+  height: 89vh;
+  position:relative;
 }
 
 .title {
@@ -21,7 +31,6 @@ body {
 }
 
 .form {
-  padding-left: 18px;
   font-family: '微軟正黑體';
 }
 
@@ -30,7 +39,7 @@ body {
 }
 
 #includedContent {
-  width: 25%;
+  width: 75%;
 }
 #network {
   visibility: hidden;

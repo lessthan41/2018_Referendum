@@ -76,7 +76,7 @@ function func(location) {
   setTimeout(function(){doZoom(location);}, 1500);
 }
 
-//Choose City change District
+// Choose City change District
 function changeCity() {
 
   //下拉選單長度 = 0
@@ -93,7 +93,7 @@ function changeCity() {
   //console.log(District);
 
   var Dist_len = District.length;
-  //console.log(Dist_len)
+  //console.log(Dist_len);
 
   for (var i = 0; i < Dist_len; i++) {
     //塞進來摟
