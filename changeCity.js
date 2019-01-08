@@ -76,6 +76,8 @@ function func(location) {
   setTimeout(function(){doZoom(location);}, 1500);
 }
 
+//----------------------------------------------------------
+
 // Choose City change District
 function changeCity() {
 
@@ -115,6 +117,23 @@ function changeCity() {
 }
 
 //-----------------------------------------------
+//clickCity
+function clickCity(location){
+
+  var put = [Taipei,Keelung,Newtaipei,Yeeelan,Taoyuan,Xinchu_city,Xinchu,
+                Miaoli,Taizhong,Zhanghua,Nantou,Jiayi_city,Jiayi,Yunlin,
+                Tainan,Kaoshong,Ponghu,Jingman,Pingdon,Taidong,Hualian,LianJian];
+  var chinese = ['臺北市',"基隆市","新北市","宜蘭縣","桃園縣","新竹市","新竹縣",
+                "苗栗縣","臺中市","彰化縣","南投縣","嘉義市","嘉義縣","雲林縣",
+                "臺南市","高雄市","澎湖縣","金門縣","屏東縣","臺東縣","花蓮縣","連江縣"];
+  for(i=0; i<22; i++){
+    if (location == chinese[i]) {
+      func(put[i]);
+    }
+  }
+}
+
+//-----------------------------------------------
 //"pointermove geojson"
 
 var select = new ol.interaction.Select({
@@ -134,3 +153,27 @@ function add_interaction() {
 function del_interaction() {
   map.removeInteraction(select);
 }
+
+//----------------------------------------------------------
+//"click"
+
+var displayFeatureInfo = function(pixel) {
+
+  var feature = map.forEachFeatureAtPixel(pixel, function(feature) {
+    return feature;
+  });
+
+  if (feature) {
+    //console.log(feature.get('name'));
+    clickCity(feature.get('name'));
+  }
+};
+
+map.on('singleclick', function(evt) {
+  if (evt.dragging) {
+    return;
+  }
+  //console.log(evt.originalEvent);
+  var pixel = map.getEventPixel(evt.originalEvent);
+  displayFeatureInfo(pixel);
+});
