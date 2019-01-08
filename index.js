@@ -35,6 +35,7 @@ var pointLayer = new ol.layer.Vector({});
 var map = new ol.Map({
   target: 'map',
   layers: [raster, vector, pointLayer],
+  // stop zooming with scroll
   view: view
 });
 
