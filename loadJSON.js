@@ -10,7 +10,7 @@ function villVisual(items) {
   // console.log(items);
   var count = 0, coor = new Array;
   var new_items = {"type": "FeatureCollection", "name": "TW_Vill_simplified", "crs": {"properties":{"name": "urn:ogc:def:crs:EPSG::3824"}, "type": "name"}, "features":{}};
-  console.log(items);
+  // console.log(items);
 
   for(i in items["features"]){
     coor = [];
@@ -45,8 +45,9 @@ function villVisual(items) {
   vectorSource = new ol.source.Vector({
     features:feature
   });
-  
+
   villLayer.setSource(vectorSource);
+
 
   villVisualCheck = 1;
 }

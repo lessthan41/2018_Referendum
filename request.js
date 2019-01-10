@@ -3,12 +3,12 @@ var vill_json;
 
 function loadVill(clickCheck) { //load data via ajax
 
-  if (clickCheck == 0) {
+  if (clickCheck != 0) {
     $("#village option").remove();
     $("#village").append($("<option></option>").attr("value", "none").text("-"));
   }
 
-  if (loadvill_check == 0) {
+
     var url_load = "https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/TW_Vill_simplified.geojson";
 
     $.ajax({
@@ -27,18 +27,18 @@ function loadVill(clickCheck) { //load data via ajax
         }
       }
     });
-  } else {
+
     // console.log(vill_json);
 
       // vill(vill_json);
-      if (clickCheck == 1) {
-        villVisual(vill_json);
-      }
-      if ($("#district").val() != 'none') {
-        // console.log(123);
-        vill(vill_json);
-      }
-  }
+      // if (clickCheck == 1) {
+      //   villVisual(vill_json);
+      // }
+      // if ($("#district").val() != 'none') {
+      //   // console.log(123);
+      //   vill(vill_json);
+      // }
+  localStorage.clear();
   loadvill_check = 1;
 }
 
