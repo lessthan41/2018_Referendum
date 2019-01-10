@@ -1,6 +1,7 @@
 
 
 
+// 把村里結果塞進Table
 
 function vill_table(items, pass) {
 

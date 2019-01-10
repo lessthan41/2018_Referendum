@@ -105,19 +105,22 @@ function changeCity() {
 
     $('#district').append(newOpt);
   }
-  //------------------------------------
-  var put = [Taipei,Keelung,Newtaipei,Yeeelan,Taoyuan,Xinchu_city,Xinchu,
-                Miaoli,Taizhong,Zhanghua,Nantou,Jiayi_city,Jiayi,Yunlin,
-                Tainan,Kaoshong,Ponghu,Jingman,Pingdon,Taidong,Hualian,LianJian];
-  for(i=0; i<22; i++){
-    if (City == i) {
-      func(put[i]);
-    }
-  }
+  //
+  // //------------------------------------
+  // var City = $('#city').val();
+  // var put = [Taipei,Keelung,Newtaipei,Yeeelan,Taoyuan,Xinchu_city,Xinchu,
+  //               Miaoli,Taizhong,Zhanghua,Nantou,Jiayi_city,Jiayi,Yunlin,
+  //               Tainan,Kaoshong,Ponghu,Jingman,Pingdon,Taidong,Hualian,LianJian];
+  // for(i=0; i<22; i++){
+  //   if (City == i) {
+  //     func(put[i]);
+  //   }
+  // }
 }
 
 //-----------------------------------------------
 //clickCity
+
 function clickCity(location){
 
   var put = [Taipei,Keelung,Newtaipei,Yeeelan,Taoyuan,Xinchu_city,Xinchu,
@@ -131,6 +134,7 @@ function clickCity(location){
       func(put[i]);
     }
   }
+
 }
 
 //-----------------------------------------------
@@ -164,10 +168,11 @@ var displayFeatureInfo = function(pixel) {
   });
 
   if (feature) {
-    //console.log(feature.get('name'));
-    clickCity(feature.get('name'));
-    loadVill();
+
     featureName = feature.get('name');
+    clickCity(featureName);
+    loadVill(1);
+
   }
 };
 

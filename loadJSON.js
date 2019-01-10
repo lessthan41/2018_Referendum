@@ -1,56 +1,50 @@
 
 
-
+var villVisualCheck;
 function villVisual(items) {
-  console.log(items);
+  
+  if(villVisualCheck == 1){
+    map.removeLayer(villLayer);
+  }
+  // console.log(items);
+  villVisualCheck = 0;
+  var count = 0;
+  var new_items = {"type": "FeatureCollection", "name": "TW_Vill_simplified", "crs": {"properties":{"name": "urn:ogc:def:crs:EPSG::3824"}, "type": "name"}, "features":{}};
+  // console.log(featureName);
 
   for(i in items["features"]){
-    //console.log(items.features.i.geometry.coordinate.length);
+
     for(j in items["features"][i]['geometry']['coordinates'][0]){
-      // console.log(ol.proj.fromLonLat(items["features"][i]['geometry']['coordinates'][0][j]));
       items["features"][i]['geometry']['coordinates'][0][j] = ol.proj.fromLonLat(items["features"][i]['geometry']['coordinates'][0][j]);
     }
-    //items['features'][i]['geometry']['coordinates'] = Taipei;
-    // items['features'][i]['geometry']['type'] = "Point";
-    //console.log(items['features'][i]["properties"]["COUNTYNAME"]);
-    if (items['features'][i]["properties"]["COUNTYNAME"] != featureName){
+
+
+    if (items['features'][i]["properties"]["COUNTYNAME"] == featureName){
       //console.log(items['features'][i]["properties"]["VILLNAME"]);
-      delete items['features'][i];
+      new_items['features'][count] = items['features'][i];
+      count = count + 1;
     }
+
   }
 
+  new_items["features"] = Object.values(new_items["features"])
 
-  items["features"] = Object.values(items["features"])
 
-  map.removeLayer(vector);
+  console.log(vectorSource);
+
+
   vectorSource = new ol.source.Vector({
-    features: (new ol.format.GeoJSON()).readFeatures(items)
+    features: (new ol.format.GeoJSON()).readFeatures(new_items)
   });
+  // console.log(typeof vectorSource);
 
-  villLayer = new ol.layer.Vector({
+  var villLayer = new ol.layer.Vector({
     source: vectorSource
   });
 
+  // console.log(villLayer);
   map.addLayer(villLayer);
 
-  //vectorSource.addFeature(new ol.Feature((new ol.format.GeoJSON()).readFeatures(items)));
 
-
-  // box = [[]];
-  // for(i in items["features"]){
-  //   //console.log(items['features'][i]["properties"]['coordinates']);
-  //   box[0].push(items['features'][i]["geometry"]['coordinates']);
-  // }
-  // //console.log(box);
-  //
-  //
-  // var thing = new ol.geom.Vector(box);
-  // //console.log(thing);
-  //
-  // var featurething = new ol.Feature({
-  //     name: "Thing",
-  //     geometry: thing
-  // });
-
-  // vectorSource.addFeature();
+  villVisualCheck = 1;
 }

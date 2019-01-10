@@ -1,5 +1,7 @@
 
 
+// 下拉式選單+入village
+
 function vill(geojson){
   county_val = $("#city").val();
   dist_val = $("#district").val();

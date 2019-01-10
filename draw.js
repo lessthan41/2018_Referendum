@@ -9,6 +9,6 @@ function draw() {
 
   var features = vSource1.getFeatures();
 
-  console.log(features);
+  //console.log(features);
 
 }
