@@ -2,10 +2,8 @@
 
 var villVisualCheck;
 function villVisual(items) {
-  
-  if(villVisualCheck == 1){
-    map.removeLayer(villLayer);
-  }
+  // console.log(123);
+
   // console.log(items);
   villVisualCheck = 0;
   var count = 0;
@@ -30,21 +28,28 @@ function villVisual(items) {
   new_items["features"] = Object.values(new_items["features"])
 
 
-  console.log(vectorSource);
+  // console.log(new_items);
+  // vectorSource.addFeature(new ol.Feature((new ol.format.GeoJSON()).readFeatures(new_items)))
+  // features = new ol.Feature()
+  vectorSource.clear();
 
+  var feature = (new ol.format.GeoJSON()).readFeatures(new_items);
+  console.log(feature);
 
   vectorSource = new ol.source.Vector({
-    features: (new ol.format.GeoJSON()).readFeatures(new_items)
+    features:feature
   });
-  // console.log(typeof vectorSource);
+  // console.log(vectorSource);
 
-  var villLayer = new ol.layer.Vector({
-    source: vectorSource
-  });
+  // var villLayer = new ol.layer.Vector({
+  //   source: vectorSource
+  // });
 
   // console.log(villLayer);
-  map.addLayer(villLayer);
+  // console.log(vectorSource);
+  villLayer.setSource(vectorSource);
 
-
+  // new_items.features = {};
+  // console.log(new_items);
   villVisualCheck = 1;
 }

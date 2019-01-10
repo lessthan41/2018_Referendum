@@ -169,6 +169,11 @@ var displayFeatureInfo = function(pixel) {
 
   if (feature) {
 
+    if(villVisualCheck == 1){
+      // console.log(456);
+      villLayer.getSource().clear();
+    }
+
     featureName = feature.get('name');
     clickCity(featureName);
     loadVill(1);
