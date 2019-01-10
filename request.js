@@ -22,6 +22,7 @@ function loadVill(clickCheck) { //load data via ajax
           villVisual(items);
         }
         if ($("#district").val() != 'none') {
+          console.log(123);
           vill(items);
         }
       }
@@ -32,6 +33,10 @@ function loadVill(clickCheck) { //load data via ajax
       // vill(vill_json);
       if (clickCheck == 1) {
         villVisual(vill_json);
+      }
+      if ($("#district").val() != 'none') {
+        // console.log(123);
+        vill(vill_json);
       }
   }
   loadvill_check = 1;
