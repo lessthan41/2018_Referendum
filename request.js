@@ -9,40 +9,40 @@ function loadVill(clickCheck, draw) { //load data via ajax
   }
 
 
-    var url_load = "https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/TW_Vill_simplified.geojson";
+  var url_load = "https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/TW_Vill_simplified.geojson";
 
-    $.ajax({
-      url: url_load,
-      dataType: "json",
-      success: function(items) {
-        vill_json = items;
-        //console.log(vill_json);
+  $.ajax({
+    url: url_load,
+    dataType: "json",
+    success: function(items) {
+      vill_json = items;
+      //console.log(vill_json);
+      //console.log(draw);
+
+      if (clickCheck == 1) {
         //console.log(draw);
-
-        if (clickCheck == 1) {
-          //console.log(draw);
-          villVisual(items, draw);
-        }
-        if (draw == 2){
-          villVisual(items, draw)
-        }
-        if ($("#district").val() != 'none') {
-          console.log(123);
-          vill(items);
-        }
+        villVisual(items, draw);
       }
-    });
+      if (draw == 2) {
+        villVisual(items, draw)
+      }
+      if ($("#district").val() != 'none') {
+        console.log(123);
+        vill(items);
+      }
+    }
+  });
 
-    // console.log(vill_json);
+  // console.log(vill_json);
 
-      // vill(vill_json);
-      // if (clickCheck == 1) {
-      //   villVisual(vill_json);
-      // }
-      // if ($("#district").val() != 'none') {
-      //   // console.log(123);
-      //   vill(vill_json);
-      // }
+  // vill(vill_json);
+  // if (clickCheck == 1) {
+  //   villVisual(vill_json);
+  // }
+  // if ($("#district").val() != 'none') {
+  //   // console.log(123);
+  //   vill(vill_json);
+  // }
   localStorage.clear();
   loadvill_check = 1;
 }

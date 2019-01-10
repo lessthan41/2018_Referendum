@@ -6,7 +6,7 @@ function villVisual(items, draw) {
     if (villVisualCheck == 1) {
       villLayer.getSource().clear();
     }
-  
+
 
   // console.log(items);
   var count = 0,
@@ -57,7 +57,7 @@ function villVisual(items, draw) {
     features: feature
   });
 
-  console.log(vectorSource);
+  // console.log(vectorSource);
 
 
 
