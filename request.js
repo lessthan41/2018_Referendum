@@ -13,9 +13,11 @@ function loadVill() { //load data via ajax
       success: function(items) {
         //console.log(123);
         //console.log(items);
-
-        vill_json = items;
-        vill(items);
+        villVisual(items);
+        vill_json = items
+        if($("#district").val() != 'none'){
+          vill(items);
+        }
       }
     });
   }
@@ -25,6 +27,7 @@ function loadVill() { //load data via ajax
   loadvill_check = 1;
 }
 
+//-----------------------------------------------------
 function seven(){    //load data via ajax
   var url7 = "https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/case7_vill.txt";
   $.ajax({

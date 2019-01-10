@@ -156,7 +156,7 @@ function del_interaction() {
 
 //----------------------------------------------------------
 //"click"
-
+var featureName;
 var displayFeatureInfo = function(pixel) {
 
   var feature = map.forEachFeatureAtPixel(pixel, function(feature) {
@@ -166,6 +166,8 @@ var displayFeatureInfo = function(pixel) {
   if (feature) {
     //console.log(feature.get('name'));
     clickCity(feature.get('name'));
+    loadVill();
+    featureName = feature.get('name');
   }
 };
 

@@ -28,13 +28,18 @@ var vector = new ol.layer.Vector({
   }),
 })
 
-var pointLayer = new ol.layer.Vector({});
+
+var vectorSource = new ol.source.Vector({
+});
+var villLayer = new ol.layer.Vector({
+  source: vectorSource
+});
 
 
 //generate map
 var map = new ol.Map({
   target: 'map',
-  layers: [raster, vector, pointLayer],
+  layers: [raster, vector],
   // stop zooming with scroll
   view: view
 });
