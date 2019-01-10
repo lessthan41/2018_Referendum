@@ -173,7 +173,7 @@ var displayFeatureInfo = function(pixel) {
 
     featureName = feature.get('name');
     clickCity(featureName);
-    loadVill(1);
+    loadVill(1, 1);
 
   }
 };

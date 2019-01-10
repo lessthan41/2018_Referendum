@@ -64,7 +64,7 @@
               <!------------------------------------------------------>
               <br><span class='text'>1. 選擇您想查看的公投案</span>
               <form class='form' id='ref'>
-                <select name='ref' style="width:300px;" id='layer1' onchange='callDraw()'>
+                <select name='ref' style="width:300px;" id='layer1'>
                   <option value="none">-</option>
                   　<option value="7">第七案： 反空汙公投</option>
                   　<option value="8">第八案： 反深澳電廠</option>
@@ -78,9 +78,11 @@
                 </select>
               </form>
               <!------------------------------------------------------>
-              <br><span class='text'>2. 選擇您想進行疊圖的公投案</span>
+              <br><span class='text'>2. 自地圖選擇欲察看縣市</span><br>
+              <!------------------------------------------------------>
+              <br><span class='text'>3. 選擇您想進行疊圖的公投案</span>
               <form class='form' id='overlay'>
-                <select id='overlay' style="width:300px;">
+                <select id='overlay' style="width:300px;" onchange='loadVill(2,2)'>
                   <option value="none">-</option>
                   <option value="7">第七案： 反空汙公投</option>
                   　<option value="8">第八案： 反深澳電廠</option>
@@ -129,7 +131,7 @@
                     <option value="21">連江縣</option>
                   </select>&emsp;
 
-                  <select id='district' style="width:80px" onchange="loadVill(); condition()">
+                  <select id='district' style="width:80px" onchange="loadVill(0); condition()">
                     <option value="none" selected>-</option>
                   </select>&emsp;
 

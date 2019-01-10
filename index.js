@@ -40,7 +40,7 @@ var villLayer = new ol.layer.Vector({
 //generate map
 var map = new ol.Map({
   target: 'map',
-  layers: [raster, vector,villLayer],
+  layers: [raster, vector, villLayer],
   // stop zooming with scroll
   view: view
 });

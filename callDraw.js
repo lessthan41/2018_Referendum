@@ -1,7 +1,7 @@
 
-var drawCheck;
-function callDraw(vectorSource){
-  if(drawCheck == 1){
+var drawCheck1;
+function callDraw1(source){
+  if(drawCheck1 == 1){
     map.removeLayer(my_layer1);
   }
 
@@ -12,7 +12,7 @@ function callDraw(vectorSource){
 
   if (sel1 == 7){
     var my_layer1 = new ol.layer.Vector({
-        source:vectorSource,
+        source:source,
         style: function (feature, resolution) {
             return getStyle7(feature, resolution);
         }
@@ -21,10 +21,7 @@ function callDraw(vectorSource){
 
   else if(sel1 == 8){
     var my_layer1 = new ol.layer.Vector({
-        source:new ol.source.Vector({
-        url: 'https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/TW_Vill_simplified_2.geojson',
-        format: new ol.format.GeoJSON()
-      }),
+        source:source,
         style: function (feature, resolution) {
             return getStyle8(feature, resolution);
         }
@@ -33,10 +30,7 @@ function callDraw(vectorSource){
 
   else if(sel1 == 9){
     var my_layer1 = new ol.layer.Vector({
-        source:new ol.source.Vector({
-        url: 'https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/TW_Vill_simplified_2.geojson',
-        format: new ol.format.GeoJSON()
-      }),
+        source:source,
         style: function (feature, resolution) {
             return getStyle9(feature, resolution);
         }
@@ -45,10 +39,7 @@ function callDraw(vectorSource){
 
   else if(sel1 == 10){
     var my_layer1 = new ol.layer.Vector({
-        source:new ol.source.Vector({
-        url: 'https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/TW_Vill_simplified_2.geojson',
-        format: new ol.format.GeoJSON()
-      }),
+        source:source,
         style: function (feature, resolution) {
             return getStyle10(feature, resolution);
         }
@@ -57,10 +48,7 @@ function callDraw(vectorSource){
 
   else if(sel1 == 11){
     var my_layer1 = new ol.layer.Vector({
-        source:new ol.source.Vector({
-        url: 'https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/TW_Vill_simplified_2.geojson',
-        format: new ol.format.GeoJSON()
-      }),
+        source:source,
         style: function (feature, resolution) {
             return getStyle11(feature, resolution);
         }
@@ -69,10 +57,7 @@ function callDraw(vectorSource){
 
   else if(sel1 == 12){
     var my_layer1 = new ol.layer.Vector({
-        source:new ol.source.Vector({
-        url: 'https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/TW_Vill_simplified_2.geojson',
-        format: new ol.format.GeoJSON()
-      }),
+        source:source,
         style: function (feature, resolution) {
             return getStyle12(feature, resolution);
         }
@@ -81,10 +66,7 @@ function callDraw(vectorSource){
 
   else if(sel1 == 13){
     var my_layer1 = new ol.layer.Vector({
-        source:new ol.source.Vector({
-        url: 'https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/TW_Vill_simplified_2.geojson',
-        format: new ol.format.GeoJSON()
-      }),
+        source:source,
         style: function (feature, resolution) {
             return getStyle13(feature, resolution);
         }
@@ -93,10 +75,7 @@ function callDraw(vectorSource){
 
   else if(sel1 == 14){
     var my_layer1 = new ol.layer.Vector({
-        source:new ol.source.Vector({
-        url: 'https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/TW_Vill_simplified_2.geojson',
-        format: new ol.format.GeoJSON()
-      }),
+        source:source,
         style: function (feature, resolution) {
             return getStyle14(feature, resolution);
         }
@@ -105,10 +84,7 @@ function callDraw(vectorSource){
 
   else if(sel1 == 15){
     var my_layer1 = new ol.layer.Vector({
-        source:new ol.source.Vector({
-        url: 'https://raw.githubusercontent.com/cartus0910/WebGIS/master/Final_Project/TW_Vill_simplified_2.geojson',
-        format: new ol.format.GeoJSON()
-      }),
+        source:source,
         style: function (feature, resolution) {
             return getStyle15(feature, resolution);
         }
@@ -116,5 +92,105 @@ function callDraw(vectorSource){
   }
 
   map.addLayer(my_layer1);
-  drawCheck = 1;
+  localStorage.clear();
+  drawCheck1 = 1;
+}
+
+var drawCheck2;
+function callDraw2(source){
+  // console.log(123);
+  if(drawCheck2 == 1){
+    map.removeLayer(my_layer2);
+  }
+  // console.log(123);
+  var sel2 = $('#overlay').val();
+  if(sel2 == 'none'){
+    return;
+  }
+  // console.log(123);
+  if (sel2 == 7){
+    var my_layer2 = new ol.layer.Vector({
+        source:source,
+        style: function (feature, resolution) {
+            return getStyle7(feature, resolution);
+        }
+    });
+    console.log(123);
+  }
+
+  else if(sel2 == 8){
+    var my_layer2 = new ol.layer.Vector({
+        source:source,
+        style: function (feature, resolution) {
+            return getStyle8(feature, resolution);
+        }
+    });
+  }
+
+  else if(sel2 == 9){
+    var my_layer2 = new ol.layer.Vector({
+        source:source,
+        style: function (feature, resolution) {
+            return getStyle9(feature, resolution);
+        }
+    });
+  }
+
+  else if(sel2 == 10){
+    var my_layer2 = new ol.layer.Vector({
+        source:source,
+        style: function (feature, resolution) {
+            return getStyle10(feature, resolution);
+        }
+    });
+  }
+
+  else if(sel2 == 11){
+    var my_layer2 = new ol.layer.Vector({
+        source:source,
+        style: function (feature, resolution) {
+            return getStyle11(feature, resolution);
+        }
+    });
+  }
+
+  else if(sel2 == 12){
+    var my_layer2 = new ol.layer.Vector({
+        source:source,
+        style: function (feature, resolution) {
+            return getStyle12(feature, resolution);
+        }
+    });
+  }
+
+  else if(sel2 == 13){
+    var my_layer2 = new ol.layer.Vector({
+        source:source,
+        style: function (feature, resolution) {
+            return getStyle13(feature, resolution);
+        }
+    });
+  }
+
+  else if(sel2 == 14){
+    var my_layer2 = new ol.layer.Vector({
+        source:source,
+        style: function (feature, resolution) {
+            return getStyle14(feature, resolution);
+        }
+    });
+  }
+
+  else if(sel2 == 15){
+    var my_layer2 = new ol.layer.Vector({
+        source:source,
+        style: function (feature, resolution) {
+            return getStyle15(feature, resolution);
+        }
+    });
+  }
+
+  map.addLayer(my_layer2);
+  localStorage.clear();
+  drawCheck2 = 1;
 }

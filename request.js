@@ -1,9 +1,9 @@
 var loadvill_check = 0;
 var vill_json;
 
-function loadVill(clickCheck) { //load data via ajax
+function loadVill(clickCheck, draw) { //load data via ajax
 
-  if (clickCheck != 0) {
+  if (clickCheck == 0) {
     $("#village option").remove();
     $("#village").append($("<option></option>").attr("value", "none").text("-"));
   }
@@ -17,9 +17,14 @@ function loadVill(clickCheck) { //load data via ajax
       success: function(items) {
         vill_json = items;
         //console.log(vill_json);
+        //console.log(draw);
 
         if (clickCheck == 1) {
-          villVisual(items);
+          //console.log(draw);
+          villVisual(items, draw);
+        }
+        if (draw == 2){
+          villVisual(items, draw)
         }
         if ($("#district").val() != 'none') {
           console.log(123);
