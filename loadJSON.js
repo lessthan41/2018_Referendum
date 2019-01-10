@@ -33,6 +33,10 @@ function villVisual(items, draw) {
         coor[j] = ol.proj.fromLonLat(items["features"][i]['geometry']['coordinates'][0][j]);
         // count1 = count1 + 1;
       }
+      
+      if(featureName == '桃園縣'){
+        featureName = '桃園市'
+      }
 
       if (items['features'][i]["properties"]["COUNTYNAME"] == featureName) {
         //console.log(items['features'][i]["properties"]["VILLNAME"]);

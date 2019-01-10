@@ -1,14 +1,17 @@
 
-var drawCheck1, my_layer1;
+var drawCheck1;
 function callDraw1(vectorSource){
+  var my_layer1 = new ol.layer.Vector({});
   if(drawCheck1 == 1){
-    map.removeLayer(my_layer1);
+    map.getLayers().getArray()[3] = my_layer1;
   }
 
   // if(vecterSource == )
 
   var sel1 = $('#layer1').val();
   if(sel1 == 'none'){
+    map.getLayers().getArray()[3] = my_layer1;
+
     return;
   }
 
@@ -93,17 +96,18 @@ function callDraw1(vectorSource){
     });
   }
 
-  console.log(my_layer1);
-  map.addLayer(my_layer1);
+  // console.log(my_layer1);
+  map.getLayers().getArray()[3] = my_layer1;
   localStorage.clear();
   drawCheck1 = 1;
 }
 
 var drawCheck2;
 function callDraw2(vectorSource){
-  console.log(123);
+  var my_layer2 = new ol.layer.Vector({});
+  // console.log(123);
   if(drawCheck2 == 1){
-    map.removeLayer(my_layer2);
+    map.getLayers().getArray()[4] = my_layer2;
   }
 
   var sel2 = $('#overlay').val();
@@ -195,9 +199,8 @@ function callDraw2(vectorSource){
   //map.removeLayer(map.getLayers().a[3]);
 
   // console.log(my_layer2);
-  map.addLayer(my_layer2);
 
-
+  map.getLayers().getArray()[4] = my_layer2;
   localStorage.clear();
   drawCheck2 = 1;
 }

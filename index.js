@@ -34,14 +34,19 @@ var vectorSource = new ol.source.Vector({
 var villLayer = new ol.layer.Vector({
   source: vectorSource
 });
-
+var my_layer1 = new ol.layer.Vector({
+  source: vectorSource
+});
+var my_layer2 = new ol.layer.Vector({
+  source: vectorSource
+});
 
 
 //---------------------------------------------
 //generate map
 var map = new ol.Map({
   target: 'map',
-  layers: [raster, vector, villLayer],
+  layers: [raster, vector, villLayer, my_layer1, my_layer2],
   // stop zooming with scroll
   view: view
 });
