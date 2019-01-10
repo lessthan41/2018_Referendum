@@ -47,6 +47,7 @@ function villVisual(items) {
   });
 
   villLayer.setSource(vectorSource);
+  callDraw(vectorSource);
 
 
   villVisualCheck = 1;

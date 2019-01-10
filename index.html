@@ -64,7 +64,7 @@
               <!------------------------------------------------------>
               <br><span class='text'>1. 選擇您想查看的公投案</span>
               <form class='form' id='ref'>
-                <select name='ref' style="width:300px;">
+                <select name='ref' style="width:300px;" id='layer1' onchange='callDraw()'>
                   <option value="none">-</option>
                   　<option value="7">第七案： 反空汙公投</option>
                   　<option value="8">第八案： 反深澳電廠</option>
@@ -191,12 +191,14 @@
       </div>
     </main>
     <!------------------------------------------------------>
+    <script src="draw.js"></script>
     <script src="index.js"></script>
     <script type="text/javascript" src="district_data.js"></script>
     <script src="changeCity.js"></script>
     <script src="vill.js"></script>
     <script src="table.js"></script>
     <script src="condition.js"></script>
+    <script src="callDraw.js"></script>
     <script src="loadJSON.js"></script>
     <script src="request.js"></script>
 
