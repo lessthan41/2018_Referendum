@@ -169,8 +169,6 @@ var displayFeatureInfo = function(pixel) {
 
   if (feature) {
 
-
-
     featureName = feature.get('name');
     clickCity(featureName);
     loadVill(1, 1);

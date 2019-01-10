@@ -16,6 +16,7 @@ function loadVill(clickCheck, draw) { //load data via ajax
     dataType: "json",
     success: function(items) {
       vill_json = items;
+
       //console.log(vill_json);
       //console.log(draw);
 
