@@ -1,5 +1,5 @@
 
-var drawCheck1;
+var drawCheck1, my_layer1;
 function callDraw1(vectorSource){
   if(drawCheck1 == 1){
     map.removeLayer(my_layer1);
@@ -93,6 +93,7 @@ function callDraw1(vectorSource){
     });
   }
 
+  console.log(my_layer1);
   map.addLayer(my_layer1);
   localStorage.clear();
   drawCheck1 = 1;
@@ -106,6 +107,7 @@ function callDraw2(vectorSource){
   }
 
   var sel2 = $('#overlay').val();
+  //console.log(sel2);
   if(sel2 == 'none'){
     return;
   }
@@ -190,7 +192,12 @@ function callDraw2(vectorSource){
         }
     });
   }
+  //map.removeLayer(map.getLayers().a[3]);
+
+  // console.log(my_layer2);
   map.addLayer(my_layer2);
+
+
   localStorage.clear();
   drawCheck2 = 1;
 }
