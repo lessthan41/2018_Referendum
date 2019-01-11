@@ -96,6 +96,16 @@ function callDraw1(vectorSource){
     });
   }
 
+  else if(sel1 == 16){
+    var my_layer1 = new ol.layer.Vector({
+        source:vectorSource,
+        style: function (feature, resolution) {
+            return getStyle16(feature, resolution);
+        }
+    });
+  }
+
+
   // console.log(my_layer1);
   map.getLayers().getArray()[3] = my_layer1;
   localStorage.clear();
@@ -196,6 +206,15 @@ function callDraw2(vectorSource){
         }
     });
   }
+  else if(sel2 == 16){
+    var my_layer1 = new ol.layer.Vector({
+        source:vectorSource,
+        style: function (feature, resolution) {
+            return getStyle16(feature, resolution);
+        }
+    });
+  }
+
   //map.removeLayer(map.getLayers().a[3]);
 
   // console.log(my_layer2);

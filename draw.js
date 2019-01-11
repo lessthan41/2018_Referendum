@@ -1,6 +1,6 @@
 // case 7
 getStyle7 = function (feature, resolution) {
-    if (0.0 < feature.get('Case_7_percent') < 0.1) {
+    if (0 < feature.get('Case_7_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red
@@ -75,7 +75,7 @@ getStyle7 = function (feature, resolution) {
 
 // case 8
 getStyle8 = function (feature, resolution) {
-    if (0.0 < feature.get('Case_8_percent') < 0.1) {
+    if (0 < feature.get('Case_8_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red
