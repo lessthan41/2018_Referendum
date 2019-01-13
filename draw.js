@@ -1,6 +1,6 @@
 // case 7
 getStyle7 = function (feature, resolution) {
-    if (0 < feature.get('Case_7_percent') < 0.1) {
+    if (0.01 < feature.get('Case_7_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red
@@ -75,7 +75,7 @@ getStyle7 = function (feature, resolution) {
 
 // case 8
 getStyle8 = function (feature, resolution) {
-    if (0 < feature.get('Case_8_percent') < 0.1) {
+    if (0.01 < feature.get('Case_8_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red
@@ -150,7 +150,7 @@ getStyle8 = function (feature, resolution) {
 
 // case 9
 getStyle9 = function (feature, resolution) {
-    if (0.0 < feature.get('Case_9_percent') < 0.1) {
+    if (0.01 < feature.get('Case_9_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red
@@ -225,7 +225,7 @@ getStyle9 = function (feature, resolution) {
 
 // case 10
 getStyle10 = function (feature, resolution) {
-    if (0.0 < feature.get('Case_10_percent') < 0.1) {
+    if (0.01 < feature.get('Case_10_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red
@@ -300,7 +300,7 @@ getStyle10 = function (feature, resolution) {
 
 // case 11
 getStyle11 = function (feature, resolution) {
-    if (0.0 < feature.get('Case_11_percent') < 0.1) {
+    if (0.01 < feature.get('Case_11_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red
@@ -375,7 +375,7 @@ getStyle11 = function (feature, resolution) {
 
 // case 12
 getStyle12 = function (feature, resolution) {
-    if (0.0 < feature.get('Case_12_percent') < 0.1) {
+    if (0.01 < feature.get('Case_12_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red
@@ -450,7 +450,7 @@ getStyle12 = function (feature, resolution) {
 
 // case 13
 getStyle13 = function (feature, resolution) {
-    if (0.0 < feature.get('Case_13_percent') < 0.1) {
+    if (0.01 < feature.get('Case_13_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red
@@ -532,7 +532,7 @@ getStyle13 = function (feature, resolution) {
 
 // case 14
 getStyle14 = function (feature, resolution) {
-    if (0.0 < feature.get('Case_14_percent') < 0.1) {
+    if (0.01 < feature.get('Case_14_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red
@@ -614,7 +614,7 @@ getStyle14 = function (feature, resolution) {
 
 // case 15
 getStyle15 = function (feature, resolution) {
-    if (0.0 < feature.get('Case_15_percent') < 0.1) {
+    if (0.01 < feature.get('Case_15_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red
@@ -696,7 +696,7 @@ getStyle15 = function (feature, resolution) {
 
 // case 16
 getStyle16 = function (feature, resolution) {
-    if (0.0 < feature.get('Case_16_percent') < 0.1) {
+    if (0.01 < feature.get('Case_16_percent') < 0.1) {
         return new ol.style.Style({
             fill: new ol.style.Fill({
                 color: [240, 15, 0, 0.5] // semi-transparent red

@@ -31,15 +31,6 @@ function doPan(location) {
 
 }
 
-function returnZoom() {
-
-  view.animate({
-    zoom: 7.8,
-    duration: 1500
-  });
-
-}
-
 function doZoom(location) {
   var Zoom;
 
@@ -71,7 +62,6 @@ function doZoom(location) {
 }
 
 function func(location) {
-  returnZoom();
   doPan(location);
   setTimeout(function(){doZoom(location);}, 1500);
 }
@@ -141,7 +131,16 @@ function clickCity(location){
 //"pointermove geojson"
 
 var select = new ol.interaction.Select({
-  condition: ol.events.condition.pointerMove
+  condition: ol.events.condition.pointerMove,
+  style: new ol.style.Style({
+    stroke: new ol.style.Stroke({
+      width: 3,
+      color: '#33CCFF'
+    }),
+    fill: new ol.style.Fill({
+      color: [215, 40, 0, 0]
+    })
+  })
 });
 
 if (select !== null) {
